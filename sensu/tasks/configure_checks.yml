@@ -4,3 +4,10 @@
     command: /opt/sensu/embedded/bin/check-disk-usage.rb -w 20 -c 90 
     subscribers: dev
     interval: 60
+- name: restart services
+    systemd: name={{ item }}  state=restarted
+    with_items:
+      - sensu-server
+      - sensu-api
+      - sensu-client
+      - uchiwa 
