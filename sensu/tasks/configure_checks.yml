@@ -5,9 +5,9 @@
     subscribers: dev
     interval: 60
 - name: restart services
-    systemd: name={{ item }}  state=restarted
-    with_items:
-      - sensu-server
-      - sensu-api
-      - sensu-client
-      - uchiwa 
+  systemd: name={{ item }}  state=restarted
+  with_items:
+    - sensu-server
+    - sensu-api
+    - sensu-client
+    - uchiwa 
