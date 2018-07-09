@@ -11,3 +11,10 @@
     - vmstats 
     - nginx
     - stackstorm
+    - sensu-plugins-network-checks
+    - sensu-plugins-slack
+    - sensu-plugins-tomcat
+    - sensu-plugins-redis
+    - sensu-plugins-jolokia
+    - sensu-plugins-jenkins
+    - sensu-plugins-aws
