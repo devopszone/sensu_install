@@ -16,4 +16,4 @@
     - sensu-plugins-tomcat
     - sensu-plugins-redis
     - sensu-plugins-jolokia
-    - sensu-plugins-aws
+#    - sensu-plugins-aws
