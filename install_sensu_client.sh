@@ -1,4 +1,6 @@
 #!/bin/bash
+ip=$1
+echo $ip > out
 sudo yum update -y
 sudo yum install git wget vim nano -y
 cd /tmp/
@@ -9,4 +11,4 @@ sudo yum install ansible -y
 cd /home/
 git clone https://github.com/devopszone/sensu_install.git
 cd /home/sensu_install
-/usr/bin/ansible-playbook /home/sensu_install/setup.yml > output.txt 
+/usr/bin/ansible-playbook /home/sensu_install/setup_client.yml > output.txt 
