@@ -9,4 +9,4 @@ sudo yum install ansible -y
 cd /home/
 git clone https://github.com/devopszone/sensu_install.git
 cd /home/sensu_install
-/usr/bin/ansible-playbook /home/sensu_install/setup.yml 
+/usr/bin/ansible-playbook /home/sensu_install/setup.yml >> output.txt 
