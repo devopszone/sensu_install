@@ -1,4 +1,4 @@
-- name: dick_usage_check
+- name: disk_usage_check
   sensu_check:
     name: disk_usage_check
     command: /opt/sensu/embedded/bin/check-disk-usage.rb -w 20 -c 90 
