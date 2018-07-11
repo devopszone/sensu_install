@@ -1,4 +1,4 @@
 #!/bin/bash
 touch input
-echo $1 > ip.txt
+echo $ip > ip.txt
 touch output
