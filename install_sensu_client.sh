@@ -1,6 +1,6 @@
 #!/bin/bash
 echo $ip > ip.txt
-sudo yum update -y
+#sudo yum update -y
 sudo yum install git wget vim nano -y
 cd /tmp/
 wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
