@@ -1,6 +1,5 @@
 #!/bin/bash
-ip=$1
-echo $ip > out
+echo $ip > ip.txt
 sudo yum update -y
 sudo yum install git wget vim nano -y
 cd /tmp/
