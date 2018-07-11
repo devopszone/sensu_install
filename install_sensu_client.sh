@@ -10,4 +10,4 @@ sudo yum install ansible -y
 cd /home/
 git clone https://github.com/devopszone/sensu_install.git
 cd /home/sensu_install
-/usr/bin/ansible-playbook /home/sensu_install/setup_client.yml > output.txt 
+/usr/bin/ansible-playbook /home/sensu_install/setup_client.yml --extra-vars ip=$ip > output.txt 
