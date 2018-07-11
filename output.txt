@@ -4,28 +4,35 @@ PLAY [localhost] ***************************************************************
 TASK [Gathering Facts] *********************************************************
 ok: [localhost]
 
-TASK [sensu_client : create sensu repo] ****************************************
+TASK [sensu : create sensu repo] ***********************************************
 changed: [localhost]
 
-TASK [sensu_client : install sensu_client] *************************************
+TASK [sensu : install redis,sensu,uchiwa] **************************************
+changed: [localhost] => (item=[u'redis', u'jq', u'curl', u'sensu', u'uchiwa'])
+
+TASK [sensu : configure client] ************************************************
 changed: [localhost]
 
-TASK [sensu_client : configure client] *****************************************
+TASK [sensu : configuration] ***************************************************
 changed: [localhost]
 
-TASK [sensu_client : configuration] ********************************************
+TASK [sensu : configure uchiwa] ************************************************
 changed: [localhost]
 
-TASK [sensu_client : configure transport] **************************************
+TASK [sensu : configure transport] *********************************************
 changed: [localhost]
 
-TASK [sensu_client : configure redis] ******************************************
+TASK [sensu : configure redis] *************************************************
 changed: [localhost]
 
-TASK [sensu_client : enable service] *******************************************
-changed: [localhost]
+TASK [sensu : enable service] **************************************************
+changed: [localhost] => (item=redis)
+changed: [localhost] => (item=sensu-server)
+changed: [localhost] => (item=sensu-api)
+changed: [localhost] => (item=sensu-client)
+changed: [localhost] => (item=uchiwa)
 
-TASK [sensu_client : install plugins] ******************************************
+TASK [sensu : install plugins] *************************************************
 changed: [localhost] => (item=cpu-checks)
 changed: [localhost] => (item=disk-checks)
 changed: [localhost] => (item=memory-checks)
@@ -40,6 +47,24 @@ changed: [localhost] => (item=sensu-plugins-tomcat)
 changed: [localhost] => (item=sensu-plugins-redis)
 changed: [localhost] => (item=sensu-plugins-jolokia)
 
+TASK [sensu : dick_usage_check] ************************************************
+changed: [localhost]
+
+TASK [sensu : check_cpu] *******************************************************
+changed: [localhost]
+
+TASK [sensu : check_load] ******************************************************
+changed: [localhost]
+
+TASK [sensu : check_ports] *****************************************************
+changed: [localhost]
+
+TASK [sensu : restart services] ************************************************
+changed: [localhost] => (item=sensu-server)
+changed: [localhost] => (item=sensu-api)
+changed: [localhost] => (item=sensu-client)
+changed: [localhost] => (item=uchiwa)
+
 PLAY RECAP *********************************************************************
-localhost                  : ok=9    changed=8    unreachable=0    failed=0   
+localhost                  : ok=15   changed=14   unreachable=0    failed=0   
 
